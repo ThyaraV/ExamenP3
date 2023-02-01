@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenP3.MainPage">
+
+    <StackLayout>
+
+        <Label Text="Diccionario de palabras" FontSize="Title" Padding="30,10,30,10"/>
+        <SearchBar x:Name="Buscador" 
+                   Placeholder="Ingrese la palabra" 
+                   TextColor="Black"/>
+
+        <Button Text="Llamar API" Clicked="Button_Clicked" />
+      
+        <ListView x:Name="ListaDemo">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding word}" FontSize="Title" />
+                            <Label Text="{Binding meanings[0].definitions[0].definition}" />
+                            <Label Text="{Binding meanings[0].partOfSpeech}" />
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
