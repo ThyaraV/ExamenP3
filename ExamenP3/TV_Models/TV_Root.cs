@@ -69,4 +69,5 @@ namespace ExamenP3.TV_Models
         public object[] antonyms { get; set; }
         public string example { get; set; }
     }
+
 }
